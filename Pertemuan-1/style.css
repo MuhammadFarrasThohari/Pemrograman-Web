@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    background-color: bisque;
+}
+
+.nav {
+    display: flex;
+    background-color: #333;
+    color: white;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 24px;
+    margin: 1rem;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.dashMain {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1Dash {
+    font-size: 60px;
+    color: #333;
+    text-align: center;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.typing h1 {
+    overflow: hidden;
+    border-right: 0.15px solid black;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
