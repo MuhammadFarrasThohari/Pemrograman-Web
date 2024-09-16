@@ -80,3 +80,8 @@ footer > ul > li {
 img {
     object-fit: cover;
 }
+
+.jumbotron {
+    width: 100%;
+    height: 330px;
+}
