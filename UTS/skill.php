@@ -1,7 +1,9 @@
-<!-- Ubah value variabel disini -->
 <?php
-$title = "MUHAMMAD FARRAS THOHARI RAMADHAN";
-$description = "UNIVERSITAS PEMBANGUNAN JAYA INFORMATICS STUDENT";
+include "koneksi.php";
+
+$title = $profile["nama"];
+$allSkills = json_decode($skills["skills"]);
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +25,7 @@ $description = "UNIVERSITAS PEMBANGUNAN JAYA INFORMATICS STUDENT";
         <div class="container my-5">
             <h1 class="mb-4">Skills</h1>
             <div class="accordion" id="accordionExample">
+                <!-- Bahasa Pemrograman -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -33,35 +36,19 @@ $description = "UNIVERSITAS PEMBANGUNAN JAYA INFORMATICS STUDENT";
                     <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body my-2">
                             <div class="d-flex justify-content-around">
-                                <!-- Python -->
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                        alt="Python Logo" width="60" height="60">
-                                    <p>Python</p>
-                                </div>
-                                <!-- Java -->
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                                        alt="Java Logo" width="60" height="60">
-                                    <p>Java</p>
-                                </div>
-                                <!-- JavaScript -->
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                        alt="JavaScript Logo" width="60" height="60">
-                                    <p>JavaScript</p>
-                                </div>
-                                <!-- C -->
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
-                                        alt="C Logo" width="60" height="60">
-                                    <p>C</p>
-                                </div>
+                                <?php foreach ($allSkills->bahasa_pemrograman as $skill): ?>
+                                    <div class="text-center">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/<?php echo strtolower($skill); ?>/<?php echo strtolower($skill); ?>-original.svg"
+                                            alt="<?php echo $skill; ?> Logo" width="60" height="60">
+                                        <p><?php echo $skill; ?></p>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Web Development -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -72,57 +59,43 @@ $description = "UNIVERSITAS PEMBANGUNAN JAYA INFORMATICS STUDENT";
                     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body my-3">
                             <div class="d-flex justify-content-around">
-                                <!-- Django -->
-                                <div class="text-center">
-                                    <img src="https://static.djangoproject.com/img/logos/django-logo-positive.svg"
-                                        alt="Django Logo" width="60" height="60">
-                                    <p>Django</p>
-                                </div>
-                                <!-- React -->
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                                        alt="React Logo" width="60" height="60">
-                                    <p>React</p>
-                                </div>
-                                <!-- Bootstrap -->
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg"
-                                        alt="Bootstrap Logo" width="60" height="60">
-                                    <p>Bootstrap</p>
-                                </div>
-
-                                <!-- Next.js -->
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
-                                        alt="Next.js Logo" width="60" height="60">
-                                    <p>Next.js</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                3d Modelling
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body my-3">
-                                <div class="d-flex justify-content-around">
-                                    <!-- Blender -->
+                                <?php foreach ($allSkills->web_development as $skill): ?>
                                     <div class="text-center">
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"
-                                            alt="Blender Logo" width="60" height="60">
-                                        <p>Blender</p>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/<?php echo strtolower($skill); ?>/<?php echo strtolower($skill); ?>-original.svg"
+                                            alt="<?php echo $skill; ?> Logo" width="60" height="60">
+                                        <p><?php echo $skill; ?></p>
                                     </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- 3D Modelling -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            3D Modelling
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body my-3">
+                            <div class="d-flex justify-content-around">
+                                <?php foreach ($allSkills->{"3d_modelling"} as $skill): ?>
+                                    <div class="text-center">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"
+                                            alt="Blender Logo" width="60" height="60">
+                                        <p><?php echo $skill; ?></p>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
 
     <?php include "layout/footer.php"; ?>

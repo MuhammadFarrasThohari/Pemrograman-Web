@@ -22,3 +22,9 @@ $profile = $result->fetch_assoc();
 $sqlProject = "SELECT * FROM project";
 $result = $conn->query($sqlProject);
 $projects = $result->fetch_assoc();
+
+// Sql Query to get skill data
+$sqlSkill = "SELECT * FROM skills";
+$result = $conn->query($sqlSkill);
+$skills = $result->fetch_assoc();
+$allSkills = json_decode($skills["skills"]);
