@@ -1,8 +1,8 @@
-@extends('layouts.utama')
+@extends('layoutp13.utama')
 
-@secttion('judul', 'Home - Laravel Apps')
+@section('judul', 'Home - Laravel Apps')
 
-@secttion('konten')
+@section('konten')
 <p>
     <strong>
         ini adalah Home

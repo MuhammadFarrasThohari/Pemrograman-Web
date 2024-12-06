@@ -1,8 +1,8 @@
-@extends('layouts.utama')
+@extends('layoutp13.utama')
 
-@secttion('judul', 'Contact - Laravel Apps')
+@section('judul', 'Contact - Laravel Apps')
 
-@secttion('konten')
+@section('konten')
 <p>
     <strong>
         ini adalah Contact

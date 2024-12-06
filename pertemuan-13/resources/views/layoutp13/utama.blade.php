@@ -17,9 +17,9 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="topmenu1">Home</a></li>
-      <li><a href="topmenu2">About</a></li>
-      <li><a href="topmenu3">Contact</a></li>
+      <li><a href="{{Route('topmenu1')}}">Home</a></li>
+      <li><a href="{{Route('topmenu2')}}">Home</a></li>
+      <li><a href="{{Route('topmenu3')}}">Home</a></li>
     </ul>
   </div>
 </nav>
